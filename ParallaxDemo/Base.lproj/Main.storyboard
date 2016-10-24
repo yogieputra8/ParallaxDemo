@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParallaxDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-am-Fky">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="250" id="3ex-iz-i2w" customClass="ImageCell" customModule="ParallaxDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ex-iz-i2w" id="LtZ-IF-4mF">
+                                            <frame key="frameInset" width="375" height="249"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="image-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Di-ef-QK1">
+                                                    <frame key="frameInset" width="375" height="249"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="250" id="oQp-HZ-aUw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjg-Oa-rR8">
+                                                    <frame key="frameInset" minX="143" minY="106" width="89" height="37"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="23"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1Di-ef-QK1" secondAttribute="trailing" id="F5W-gz-i9q"/>
+                                                <constraint firstItem="zjg-Oa-rR8" firstAttribute="centerY" secondItem="LtZ-IF-4mF" secondAttribute="centerY" id="Hhf-7w-TmL"/>
+                                                <constraint firstItem="1Di-ef-QK1" firstAttribute="top" secondItem="LtZ-IF-4mF" secondAttribute="top" id="SHv-gl-Nkx"/>
+                                                <constraint firstItem="zjg-Oa-rR8" firstAttribute="centerX" secondItem="LtZ-IF-4mF" secondAttribute="centerX" id="Xt8-02-7zr"/>
+                                                <constraint firstItem="1Di-ef-QK1" firstAttribute="leading" secondItem="LtZ-IF-4mF" secondAttribute="leading" id="l4Q-5m-zev"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageTitle" destination="zjg-Oa-rR8" id="sAs-hV-CqS"/>
+                                            <outlet property="parallaxImage" destination="1Di-ef-QK1" id="YF8-ld-Zzc"/>
+                                            <outlet property="parallaxImageHeight" destination="oQp-HZ-aUw" id="3dM-GO-jU1"/>
+                                            <outlet property="parallaxTopConstraint" destination="SHv-gl-Nkx" id="gBH-xg-JFE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="A3h-am-Fky" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FY0-bR-tkQ"/>
+                            <constraint firstItem="A3h-am-Fky" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UjO-Cq-Lan"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A3h-am-Fky" secondAttribute="bottom" id="Vcv-de-e5l"/>
+                            <constraint firstAttribute="trailing" secondItem="A3h-am-Fky" secondAttribute="trailing" id="xqd-3n-lCx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="A3h-am-Fky" id="g9r-o5-73t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image-1" width="8192" height="5461"/>
+    </resources>
+</document>
